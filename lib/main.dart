@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ItemScreen(item: item),
+                    builder: (context) => SecondScreen(item: item),
                   ),
                 );
               },

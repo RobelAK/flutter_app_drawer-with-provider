@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../providers/items_provider.dart';
 
-class ItemScreen extends StatelessWidget {
+class SecondScreen extends StatelessWidget {
   final Item item;
 
-  const ItemScreen({required this.item});
+  const SecondScreen({required this.item});
 
   @override
   Widget build(BuildContext context) {
