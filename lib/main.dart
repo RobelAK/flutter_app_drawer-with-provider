@@ -12,19 +12,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter app drawer with provider',
-      home: MyHomePage(),
+      home: HomePage(),
     );
   }
 }
-class MyHomePage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   final items = Items().items;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('List of item'),
+        title: Row(
+          children: const [
+            Icon(Icons.data_object),
+            SizedBox(width: 20,),
+             Text('List of item'),
+          ], 
+        ),
         actions: const [Icon(Icons.more_vert)], 
       ),
       drawer:  drawer(), 
@@ -33,7 +40,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
           },
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: ListView.builder(
         itemCount: items.length,
         itemBuilder: (context, index) {
