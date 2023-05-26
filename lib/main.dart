@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'providers/items_provider.dart';
 import 'drawer/drawer.dart';
+import 'screen/screen.dart';
 void main() {
   runApp(MyApp());
 }
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My App',
+      title: 'Flutter app drawer with provider',
       home: MyHomePage(),
     );
   }
@@ -30,7 +31,6 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           onPressed: () {
-            // Handle add button pressed
           },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -69,35 +69,6 @@ class MyHomePage extends StatelessWidget {
             )
           );
         },
-      ),
-    );
-  }
-}
-
-class ItemScreen extends StatelessWidget {
-  final Item item;
-
-  const ItemScreen({required this.item});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-       title: Text(item.name),
-      ),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.network(item.imageUrl),
-            const SizedBox(height: 16.0),
-            const SizedBox(height: 16.0),
-            Text(
-              item.description,
-              style: const TextStyle(fontSize: 16.0),
-            ),
-          ],
-        ),
       ),
     );
   }
